@@ -26,5 +26,9 @@ public class CalculatorTest {
     public void returnSumForMultipleNumbersDelimitedEitherWay() {
         assertEquals(calculate.add("1\n2,3"),6);
     }
+    @Test
+    public void differentDelimitersAreValid() throws Exception {
+        assertEquals(calculate.add("//;\n1;2"),3);
+    }
 
 }

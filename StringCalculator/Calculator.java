@@ -3,7 +3,6 @@ package StringCalculator;
 public class Calculator {
 
     public int add(String input) {
-        String [] numbers = input.split(",|\n");
         if (isEmpty(input)) {
             return 0;
         }
@@ -11,19 +10,33 @@ public class Calculator {
             return stringToInt(input);
         }
         else {
-            return findSum(numbers);
+                String delimiter = ",";
+                if(input.matches("//(.*)\n(.*)")){
+                    delimiter = Character.toString(input.charAt(2));
+                    input = input.substring(4);
+                }
+
+                String numbers[] = splitNumbers(input, delimiter + "|\n");
+                return findSum(numbers);
         }
     }
+
+    private String[] splitNumbers(String numbers, String divider) {
+        return numbers.split(divider);
+    }
+
     private int findSum(String[] numbers) {
         int sum = 0;
-        for (int currentNum = 0; currentNum < numbers.length; currentNum++) {
-            sum += Integer.parseInt(numbers[currentNum]);
+        for (String currentNum : numbers) {
+            sum += stringToInt(currentNum);
         }
         return sum;
     }
+
     private int stringToInt(String input) {
         return Integer.parseInt(input);
     }
+
     private boolean isEmpty(String input) {
         return input.isEmpty();
     }
