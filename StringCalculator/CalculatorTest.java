@@ -10,4 +10,9 @@ public class CalculatorTest {
         Calculator calculate = new Calculator();
         assertEquals (calculate.add(""), 0);
     }
+    @Test
+    public void returnIntegerValueForInteger() {
+        Calculator calculate = new Calculator();
+        assertEquals(calculate.add("1"),1);
+    }
 }

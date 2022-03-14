@@ -1,7 +1,11 @@
 package StringCalculator;
 
 public class Calculator {
+
     public int add(String s) {
-        return -1;
+        if (s.isEmpty()) {
+            return 0;
+        }
+        return Integer.parseInt(s);
     }
 }
