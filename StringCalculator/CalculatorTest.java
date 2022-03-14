@@ -18,5 +18,9 @@ public class CalculatorTest {
     public void returnSumForTwoNumbersDelimitedByComma() {
         assertEquals(calculate.add("1,2"), 3);
     }
+    @Test
+    public void returnSumForTwoNumbersDelimitedByNewLine() {
+        assertEquals(calculate.add("1\n2"),3);
+    }
 
 }
