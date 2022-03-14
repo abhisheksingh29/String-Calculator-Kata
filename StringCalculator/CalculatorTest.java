@@ -5,14 +5,18 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
+    Calculator calculate = new Calculator();
     @Test
     public void returnZeroForEmptyString() {
-        Calculator calculate = new Calculator();
         assertEquals (calculate.add(""), 0);
     }
     @Test
     public void returnIntegerValueForInteger() {
-        Calculator calculate = new Calculator();
         assertEquals(calculate.add("1"),1);
     }
+    @Test
+    public void returnSumForTwoNumbersDelimitedByComma() {
+        assertEquals(calculate.add("1,2"), 3);
+    }
+
 }
