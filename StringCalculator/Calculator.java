@@ -2,10 +2,16 @@ package StringCalculator;
 
 public class Calculator {
 
-    public int add(String s) {
-        if (s.isEmpty()) {
+    public int add(String input) {
+        if (isEmpty(input)) {
             return 0;
         }
-        return Integer.parseInt(s);
+        return stringToInt(input);
+    }
+    private int stringToInt(String input) {
+        return Integer.parseInt(input);
+    }
+    private boolean isEmpty(String input) {
+        return input.isEmpty();
     }
 }
