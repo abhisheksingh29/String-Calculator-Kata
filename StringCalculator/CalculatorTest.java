@@ -22,5 +22,9 @@ public class CalculatorTest {
     public void returnSumForTwoNumbersDelimitedByNewLine() {
         assertEquals(calculate.add("1\n2"),3);
     }
+    @Test
+    public void returnSumForMultipleNumbersDelimitedEitherWay() {
+        assertEquals(calculate.add("1\n2,3"),6);
+    }
 
 }

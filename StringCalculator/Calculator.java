@@ -11,11 +11,15 @@ public class Calculator {
             return stringToInt(input);
         }
         else {
-            return findSum(numbers[0], numbers[1]);
+            return findSum(numbers);
         }
     }
-    private int findSum(String num1, String num2) {
-        return Integer.parseInt(num1) + Integer.parseInt(num2);
+    private int findSum(String[] numbers) {
+        int sum = 0;
+        for (int currentNum = 0; currentNum < numbers.length; currentNum++) {
+            sum += Integer.parseInt(numbers[currentNum]);
+        }
+        return sum;
     }
     private int stringToInt(String input) {
         return Integer.parseInt(input);
