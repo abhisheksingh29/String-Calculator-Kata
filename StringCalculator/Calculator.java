@@ -26,16 +26,20 @@ public class Calculator {
     }
 
     private int findSum(String[] numbers) throws Exception {
-        for (String currentNum : numbers) {
-            if (stringToInt(currentNum) < 0 ) {
-                throw new Exception("Negatives not allowed" + stringToInt(currentNum));
-            }
-        }
+        findWrongInput(numbers);
         int sum = 0;
         for (String currentNum : numbers) {
             sum += stringToInt(currentNum);
         }
         return sum;
+    }
+
+    private void findWrongInput(String[]numbers) throws Exception {
+        for (String currentNum : numbers) {
+            if (stringToInt(currentNum) < 0) {
+                throw new Exception("Negatives not allowed" + stringToInt(currentNum));
+            }
+        }
     }
 
     private int stringToInt(String input) {
