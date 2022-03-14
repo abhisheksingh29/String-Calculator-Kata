@@ -27,8 +27,12 @@ public class CalculatorTest {
         assertEquals(calculate.add("1\n2,3"),6);
     }
     @Test
-    public void differentDelimitersAreValid() throws Exception {
+    public void differentDelimitersAreValid() {
         assertEquals(calculate.add("//;\n1;2"),3);
+    }
+    @Test(expected = Exception.class)
+    public void returnExceptionForNegativeNumber() throws Exception{
+        calculate.add("-1,-2");
     }
 
 }
